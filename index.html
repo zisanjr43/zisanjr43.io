@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09070e">
+<meta name="description" content="Zisan Islam's personal website">
+<title>Zisan Islam | Official Website</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09070e;
+  --card:#15101f;
+  --purple:#a855f7;
+  --light:#d8b4fe;
+  --text:#faf7ff;
+  --muted:#b7abc8;
+}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 50% 25%,#591d8635,transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,sans-serif;
+  display:flex;
+  flex-direction:column;
+  overflow-x:hidden;
+}
+header{
+  width:100%;
+  padding:22px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{font-size:21px;font-weight:800;letter-spacing:1px}
+.logo span{color:var(--purple)}
+.lang{
+  padding:9px 13px;
+  background:#171020;
+  color:white;
+  border:1px solid #49315f;
+  border-radius:10px;
+  cursor:pointer;
+}
+main{
+  width:100%;
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:35px 20px 65px;
+}
+.profile{
+  width:100%;
+  max-width:480px;
+  text-align:center;
+  animation:rise .9s ease both;
+}
+.photo-wrap{
+  width:190px;
+  height:190px;
+  margin:0 auto 26px;
+  padding:5px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#e9c8ff,#8b35d5,#45116d);
+  box-shadow:0 0 35px #a855f746;
+}
+.photo{
+  display:block;
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center 35%;
+  border:4px solid var(--bg);
+}
+h1{
+  font-size:clamp(32px,8vw,43px);
+  line-height:1.25;
+  letter-spacing:-1px;
+}
+.subtitle{
+  color:var(--light);
+  margin-top:11px;
+  font-size:15px;
+  letter-spacing:2px;
+}
+.intro{
+  margin:17px auto 27px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+.socials{
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+  width:100%;
+}
+.social{
+  min-height:57px;
+  border-radius:14px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  font-size:15px;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+}
+.social:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 28px #a855f72a;
+}
+.facebook{href="https://www.facebook.com/zisanjr43"
+  background:linear-gradient(110deg,#8138cf,#54219b);
+  color:white;
+}
+.whatsapp{href="https://wa.me/qr/6UVG6EDP6Y3TK1"
+  background:#151020;
+  color:#eee1ff;
+  border:1px solid #68408d;
+}
+.email{href="mailto:zisanjr43@gmail.com"
+  background:transparent;
+  color:var(--light);
+  border:1px solid #382547;
+}
+.symbol{font-size:21px}
+footer{
+  padding:23px 15px;
+  text-align:center;
+  color:#81748f;
+  font-size:12px;
+}
+footer span{color:var(--light)}
+@keyframes rise{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:400px){
+  header{padding:18px 5%}
+  main{padding:25px 19px 45px}
+  .photo-wrap{width:160px;height:160px}
+  .intro{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <a class="logo" href="#" style="color:inherit;text-decoration:none">
+    ZISAN<span>.</span>
+  </a>
+  <button class="lang" id="lang" type="button">English</button>
+</header>
+
+<main>
+  <div class="profile">
+    <div class="photo-wrap">
+      <!-- GitHub repository-তে ছবির নাম profile.jpg রাখবে -->
+      <img class="photo"
+           src="profile.jpg"
+           alt="Zisan Islam"
+           onerror="this.style.opacity='.2'">
+    </div>
+
+    <h1>Zisan Islam</h1>
+
+    <div class="subtitle" id="subtitle">
+      PERSONAL WEBSITE
+    </div>
+
+    <p class="intro" id="intro">
+      আমার ব্যক্তিগত ওয়েবসাইটে স্বাগতম।
+      নিচের বাটনগুলো থেকে আমার সঙ্গে যোগাযোগ করতে পারো।
+    </p>
+
+    <div class="socials">
+      <a class="social facebook"
+         href="https://www.facebook.com/zisanjr43"
+         target="_blank" rel="noopener noreferrer">
+        <span class="symbol">f</span>
+        <span id="fbText">আমার Facebook</span>
+        <span>↗</span>
+      </a>
+
+      <!-- নিজের WhatsApp থেকে পাওয়া share link এখানে বসাবে -->
+      <a class="social whatsapp"
+         id="waLink"
+         href="https://www.whatsapp.com/"
+         target="_blank" rel="noopener noreferrer">
+        <span class="symbol">◉</span>
+        <span id="waText">WhatsApp-এ যোগাযোগ</span>
+        <span>↗</span>
+      </a>
+
+      <a class="social email"
+         href="mailto:zisanjr43@gmail.com">
+        <span class="symbol">✉</span>
+        <span id="emailText">ইমেইল পাঠাও</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © <span id="year"></span> <span>Zisan Islam</span> ·
+  <span id="footerText">নিজের হাতে তৈরি</span>
+</footer>
+
+<script>
+const translations = {
+  bn: {
+    subtitle: "PERSONAL WEBSITE",
+    intro: "আমার ব্যক্তিগত ওয়েবসাইটে স্বাগতম। নিচের বাটনগুলো থেকে আমার সঙ্গে যোগাযোগ করতে পারো।",
+    fb: "আমার Facebook",
+    wa: "WhatsApp-এ যোগাযোগ",
+    email: "ইমেইল পাঠাও",
+    footer: "নিজের হাতে তৈরি",
+    button: "English"
+  },
+  en: {
+    subtitle: "PERSONAL WEBSITE",
+    intro: "Welcome to my personal website. You can connect with me using the links below.",
+    fb: "My Facebook",
+    wa: "Contact on WhatsApp",
+    email: "Send me an Email",
+    footer: "Made with care",
+    button: "বাংলা"
+  }
+};
+
+let language = "bn";
+
+document.getElementById("lang").addEventListener("click", function() {
+  language = language === "bn" ? "en" : "bn";
+  const t = translations[language];
+
+  document.documentElement.lang = language;
+  document.getElementById("subtitle").textContent = t.subtitle;
+  document.getElementById("intro").textContent = t.intro;
+  document.getElementById("fbText").textContent = t.fb;
+  document.getElementById("waText").textContent = t.wa;
+  document.getElementById("emailText").textContent = t.email;
+  document.getElementById("footerText").textContent = t.footer;
+  this.textContent = t.button;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
